@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,21 @@ namespace WebAPI
             services.AddControllers();
 
             #region Swagger
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Roof API",
+                    Description = "Roof API",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Ali Furkan KIZIL",
+                        Email = "alifurkankizil@gmail.com",
+                        Url = new Uri("https://www.linkedin.com/in/ali-furkan-kizil-17178a140/")
+                    }
+                });
+            });
             #endregion
         }
 
