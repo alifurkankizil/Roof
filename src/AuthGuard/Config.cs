@@ -3,6 +3,7 @@
 
 
 using IdentityServer4.Models;
+using IdentityServer4.Test;
 using System.Collections.Generic;
 
 namespace AuthGuard
@@ -16,11 +17,37 @@ namespace AuthGuard
             };
 
         public static IEnumerable<ApiScope> ApiScopes =>
-            new ApiScope[]
-            { };
+            new List<ApiScope>
+            {
+                new ApiScope("employee", "Employee API")
+            };
 
         public static IEnumerable<Client> Clients =>
-            new Client[] 
-            { };
+            new List<Client>
+            {
+                new Client
+                {
+                    ClientId = "client",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = { "employee" }
+                }
+            };
+
+        public static List<TestUser> GetTestUsers()
+        {
+            return new List<TestUser>()
+            {
+                new TestUser
+                {
+                    SubjectId = "1",
+                    Username = "ali",
+                    Password = "1q2w3e".Sha256()
+                }
+            };
+        }
     }
 }
