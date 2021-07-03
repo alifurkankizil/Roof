@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{42AB6597-7FA1-4A6D-A58B-38BFCA28E861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthGuard", "src\AuthGuard\AuthGuard.csproj", "{0414745E-19E1-486C-A754-1B012F906081}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthGuard", "src\AuthGuard\AuthGuard.csproj", "{0414745E-19E1-486C-A754-1B012F906081}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "src\WebAPI\WebAPI.csproj", "{D2F75288-EB5E-4444-B80F-C152C0B20C41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0414745E-19E1-486C-A754-1B012F906081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -32,8 +31,27 @@ Global
 		{0414745E-19E1-486C-A754-1B012F906081}.Release|x64.Build.0 = Release|Any CPU
 		{0414745E-19E1-486C-A754-1B012F906081}.Release|x86.ActiveCfg = Release|Any CPU
 		{0414745E-19E1-486C-A754-1B012F906081}.Release|x86.Build.0 = Release|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Debug|x64.Build.0 = Debug|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Debug|x86.Build.0 = Debug|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Release|x64.ActiveCfg = Release|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Release|x64.Build.0 = Release|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Release|x86.ActiveCfg = Release|Any CPU
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0414745E-19E1-486C-A754-1B012F906081} = {42AB6597-7FA1-4A6D-A58B-38BFCA28E861}
+		{D2F75288-EB5E-4444-B80F-C152C0B20C41} = {42AB6597-7FA1-4A6D-A58B-38BFCA28E861}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7903B96-5002-47BF-9D5C-0CFA5AC5256F}
 	EndGlobalSection
 EndGlobal
