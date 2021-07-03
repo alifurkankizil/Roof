@@ -12,5 +12,10 @@ namespace WebAPI.Controllers
     public class EmployeeController : ControllerBase
     {
      
+        [HttpPost]
+        public void Create()
+        {
+
+        }
     }
 }
