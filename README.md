@@ -1,3 +1,6 @@
+# Swagger (Employee API)
+![Token](https://github.com/alifurkankizil/Roof/blob/main/images/swagger.png)
+
 # Get Token 
 ![Token](https://github.com/alifurkankizil/Roof/blob/main/images/tokenExample.png)
 
