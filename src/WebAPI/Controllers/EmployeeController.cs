@@ -47,7 +47,7 @@ namespace WebAPI.Controllers
             return EmployeeService.List();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public bool Delete(long id)
         {
             return EmployeeService.Delete(id);
