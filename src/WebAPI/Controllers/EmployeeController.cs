@@ -14,7 +14,8 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [Authorize]
+    //[Authorize]
+    [AllowAnonymous]
     public class EmployeeController : ControllerBase , IEmployeeService
     {
         IEmployeeService EmployeeService { get; }
