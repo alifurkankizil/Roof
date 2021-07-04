@@ -6,38 +6,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Data;
+using WebAPI.DTO;
 using WebAPI.Models;
+using WebAPI.Services.Abstract;
 
 namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     [Authorize]
-    public class EmployeeController : ControllerBase
+    public class EmployeeController : ControllerBase , IEmployeeService
     {
-        ApplicationContext Context;
-        public EmployeeController(ApplicationContext context)
+        IEmployeeService EmployeeService { get; }
+        public EmployeeController(IEmployeeService employeeService)
         {
-            Context = context;
+            EmployeeService = employeeService;
         }
      
         [HttpPost]
-        public void Create()
+        public EmployeeResponseDTO Create(EmployeeCreateDTO createDTO)
         {
-
+            return EmployeeService.Create(createDTO);
         }
 
+        [HttpPut]
+        public EmployeeResponseDTO Update(long id, EmployeeUpdateDTO updateDTO)
+        {
+            return EmployeeService.Update(id, updateDTO);
+        }
 
         [HttpGet("{id}")]
-        public Employee GetById(long id)
+        public EmployeeResponseDTO Get(long id)
         {
-            return Context.Employees.FirstOrDefault(x => x.Id == id);
+            return EmployeeService.Get(id);
         }
 
         [HttpGet]
-        public List<Employee> GetAll()
+        public IList<EmployeeResponseDTO> List()
         {
-            return Context.Employees.ToList();
+            return EmployeeService.List();
         }
+
+        [HttpDelete]
+        public bool Delete(long id)
+        {
+            return EmployeeService.Delete(id);
+        }
+
     }
 }

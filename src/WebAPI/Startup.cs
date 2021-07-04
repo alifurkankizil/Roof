@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPI.Data;
+using WebAPI.Services.Abstract;
+using WebAPI.Services.Concrete;
 
 namespace WebAPI
 {
@@ -50,6 +53,17 @@ namespace WebAPI
             });
             #endregion
 
+            #region AutoMapper
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
+            #endregion
+
+            #region Authorization
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("ApiScope", policy =>
@@ -68,6 +82,12 @@ namespace WebAPI
                      ValidateAudience = false
                  };
              });
+            #endregion
+
+            #region Service Injection 
+            //TODO : AutoFac
+            services.AddScoped<IEmployeeService, EmployeeService>();
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
