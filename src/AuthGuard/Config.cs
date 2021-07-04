@@ -19,7 +19,8 @@ namespace AuthGuard
         public static IEnumerable<ApiScope> ApiScopes =>
             new List<ApiScope>
             {
-                new ApiScope("employee", "Employee API")
+                new ApiScope("employee", "Employee API"),
+                new ApiScope("test", "Test API")
             };
 
         public static IEnumerable<Client> Clients =>
@@ -34,6 +35,16 @@ namespace AuthGuard
                         new Secret("secret".Sha256())
                     },
                     AllowedScopes = { "employee" }
+                },
+                new Client
+                {
+                    ClientId = "testClient",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = { "test" }
                 }
             };
 
