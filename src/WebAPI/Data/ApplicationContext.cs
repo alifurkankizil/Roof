@@ -33,8 +33,8 @@ namespace WebAPI.Data
             modelBuilder.Entity<EmployeeActivity>(a =>
             {
                 a.HasKey(x => new { x.EmployeeId, x.ActivityId });
-                a.HasOne(x => x.Employee).WithMany(x => x.EmployeeActivities);
-                a.HasOne(x => x.Activity).WithMany(x => x.EmployeeActivities);
+                a.HasOne(x => x.Employee).WithMany(x => x.EmployeeActivities).HasForeignKey(x => x.EmployeeId);
+                a.HasOne(x => x.Activity).WithMany(x => x.EmployeeActivities).HasForeignKey(x => x.ActivityId);
             });
         }
 

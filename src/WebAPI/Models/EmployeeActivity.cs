@@ -7,9 +7,9 @@ namespace WebAPI.Models
 {
     public class EmployeeActivity
     {
-        public int EmployeeId { get; set; }
+        public long EmployeeId { get; set; }
         public Employee Employee { get; set; }
-        public int ActivityId { get; set; }
+        public long ActivityId { get; set; }
         public Activity Activity { get; set; }
     }
 }
