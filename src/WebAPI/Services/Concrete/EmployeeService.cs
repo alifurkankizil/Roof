@@ -59,5 +59,11 @@ namespace WebAPI.Services.Concrete
             return true;
         }
 
+        public EmployeeResponseDTO GetEmployeeActivity(long id)
+        {
+            var employee = Context.Employees.Include(x => x.EmployeeActivities).ThenInclude(x => x.Activity).Single(x => x.Id == id);
+            var response = Mapper.Map<EmployeeResponseDTO>(employee);
+            return response;
+        }
     }
 }

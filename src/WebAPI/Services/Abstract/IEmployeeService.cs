@@ -13,5 +13,6 @@ namespace WebAPI.Services.Abstract
         EmployeeResponseDTO Get(long id);
         IList<EmployeeResponseDTO> List();
         bool Delete(long id);
+        EmployeeResponseDTO GetEmployeeActivity(long id);
     }
 }

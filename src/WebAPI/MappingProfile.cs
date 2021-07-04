@@ -13,9 +13,12 @@ namespace WebAPI
         public MappingProfile()
         {
             CreateMap<EmployeeCreateDTO, Employee>();
+            CreateMap<EmployeeUpdateDTO, Employee>();
             CreateMap<Employee, EmployeeResponseDTO>();
 
-            CreateMap<EmployeeUpdateDTO, Employee>();
+            CreateMap<EmployeeActivity, EmployeeActivityResponseDTO>();
+
+            CreateMap<Activity, ActivityResponseDTO>();
         }
     }
 }

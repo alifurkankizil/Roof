@@ -9,6 +9,6 @@ namespace WebAPI.DTO
     {
         public long Id { get; set; }
         public string Name { get; set; }
-        public EmployeeActivityResponseDTO EmployeeActivity { get; set; }
+        public List<EmployeeActivityResponseDTO> EmployeeActivities { get; set; }
     }
 }

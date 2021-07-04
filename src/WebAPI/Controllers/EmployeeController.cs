@@ -14,8 +14,7 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    //[Authorize]
-    [AllowAnonymous]
+    [Authorize]
     public class EmployeeController : ControllerBase , IEmployeeService
     {
         IEmployeeService EmployeeService { get; }
@@ -54,5 +53,10 @@ namespace WebAPI.Controllers
             return EmployeeService.Delete(id);
         }
 
+        [HttpGet("{id}/activity")]
+        public EmployeeResponseDTO GetEmployeeActivity(long id)
+        {
+            return EmployeeService.GetEmployeeActivity(id);
+        }
     }
 }

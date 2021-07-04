@@ -34,7 +34,7 @@ namespace WebAPI
             services.AddControllers(opt =>
             {
                 opt.Filters.Add(new ErrorHandlerMiddleware());
-            });
+            }).AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
             services.AddDbContext<ApplicationContext>(options => options.UseInMemoryDatabase(databaseName: "RoofDB"));
 
