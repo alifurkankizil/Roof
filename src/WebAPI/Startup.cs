@@ -11,7 +11,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using WebAPI.Data;
 using WebAPI.Services.Abstract;
@@ -53,6 +55,10 @@ namespace WebAPI
                         Url = new Uri("https://www.linkedin.com/in/ali-furkan-kizil-17178a140/")
                     }
                 });
+
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
             #endregion
 
